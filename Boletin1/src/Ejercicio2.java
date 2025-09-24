@@ -5,15 +5,13 @@ public class Ejercicio2 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Escribe un numero cualquiera");
         int num = sc.nextInt();
-        for (int i = 0; i < 11; i++) {
-            System.out.println(num+"*"+i+"="+num*i);
+        while (num < 0 || num > 10) {
+            System.out.println("Numero no valido");
+            num = sc.nextInt();
         }
-
-
-
-
-
-
+        for (int i = 0; i < 11; i++) {
+            System.out.println(num + "*" + i + "=" + num * i);
+        }
 
 
     }
