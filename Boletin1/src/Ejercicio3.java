@@ -3,17 +3,17 @@ import java.util.Scanner;
 public class Ejercicio3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Escribe un numero:");
+        System.out.println("Escribe un número:");
         int num = sc.nextInt();
         if (num <= 0) {
-            System.out.println("Elija otro numero mayor que 0");
+            System.out.println("Elija otro número mayor que 0");
             num = sc.nextInt();
         }
         if (num % 2 == 0) {
-            System.out.println("tu numero es par");
+            System.out.println("tu número es par");
         }
         if (num % 3 == 0) {
-            System.out.println("tu numero es impar");
+            System.out.println("tu número es impar");
         }
     }
 }
