@@ -13,7 +13,6 @@ public class Ejercicio6 {
         for (int i = 0; i < n2; i++) {
             producto += n1;
         }
-
         System.out.println("El producto es: " + producto);
     }
 }
