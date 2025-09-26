@@ -20,6 +20,4 @@ public class Ejercicio7 {
         double media = suma / n1;
         System.out.printf("La media de sus números es " + media);
     }
-
-
 }
