@@ -5,10 +5,10 @@ public class Ejercicio10 {
         Scanner sc = new Scanner(System.in);
         int numero;
         do {
-            System.out.print("Introduce un número entero positivo o cero: ");
+            System.out.print("Introduce un número entero positivo: ");
             while (!sc.hasNextInt()) { // comprobar que sea entero
-                System.out.print("Dato incorrecto. Introduce un número entero positivo o cero: ");
-                sc.next(); // limpiar entrada inválida
+                System.out.print("Dato incorrecto. Introduce un número entero positivo: ");
+                sc.next();
             }
             numero = sc.nextInt();
             if (numero < 0) {

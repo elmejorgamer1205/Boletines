@@ -7,7 +7,7 @@ public class Ejercicio9 {
         do {
             System.out.print("Introduce un número entero positivo: ");
             while (!sc.hasNextInt()) { // Validar que sea un entero
-                System.out.print("Dato incorrecto. Introduce un número entero positivo: ");
+                System.out.print("incorrecto. Introduce un número entero positivo: ");
                 sc.next();
             }
             numero = sc.nextInt();
