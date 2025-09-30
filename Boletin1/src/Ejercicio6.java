@@ -13,6 +13,8 @@ public class Ejercicio6 {
         for (int i = 0; i < Math.abs(n2); i++) {
             producto += n1;
         }
+
+        if (n2 < 0) producto = -producto;
         System.out.println("El producto es: " + producto);
     }
 }
