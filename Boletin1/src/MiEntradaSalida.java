@@ -26,7 +26,7 @@ public class MiEntradaSalida {
     }
 
     public static void main (String[]args){
-        int a = MiEntradaSalida.leerEnteroPositivo("Introduce un número");
+        int a = MiEntradaSalida.leerEnteroPositivo( "Introduce un número");
         System.out.printf("El primer número introducido es %d", a);
     }
 }

@@ -10,7 +10,7 @@ public class Ejercicio6 {
 
         int producto = 0;
 
-        for (int i = 0; i < n2; i++) {
+        for (int i = 0; i < Math.abs(n2); i++) {
             producto += n1;
         }
         System.out.println("El producto es: " + producto);
