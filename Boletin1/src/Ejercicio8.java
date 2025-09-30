@@ -20,6 +20,5 @@ public class Ejercicio8 {
         } while (respuesta.equals("S"));
 
         System.out.println("El menor de los números introducidos es: " + menor);
-        sc.close();
     }
 }
