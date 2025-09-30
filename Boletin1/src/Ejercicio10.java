@@ -20,7 +20,6 @@ public class Ejercicio10 {
             factorial *= i;
         }
         System.out.println("El factorial de " + numero + " es: " + factorial);
-        sc.close();
     }
 }
 
