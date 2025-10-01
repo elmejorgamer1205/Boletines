@@ -10,7 +10,7 @@ public class Ejercicio3 {
         do{
             n1 /=10;
             caracteres++;
-        }while(n1>0);
+        }while(Math.abs(n1)>0);
         System.out.println("El número "+num+" tiene "+caracteres+" cifras");
     }
 }
