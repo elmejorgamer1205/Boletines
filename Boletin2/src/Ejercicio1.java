@@ -3,11 +3,9 @@ import java.util.Scanner;
 public class Ejercicio1 {
     public static void main(String[] args){
        Scanner sc = new Scanner(System.in);
-       System.out.println("Introduzca un número");
+       System.out.println("Introduzca hasta 3 número");
        int num1 = sc.nextInt();
-       System.out.println("Introduzca un segundo número");
        int num2 = sc.nextInt();
-       System.out.println("Introduzca un tercer número");
        int num3 = sc.nextInt();
 
        if((num1>num2) && (num2>num3)){
