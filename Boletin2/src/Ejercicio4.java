@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Ejercicio4 {
     private static final int MAX_INTENTOS = 5;
     public static void main(String[] args) {
