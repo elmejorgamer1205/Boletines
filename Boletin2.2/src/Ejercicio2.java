@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio1 {
+public class Ejercicio2 {
     public static void main(String[] args) {
         int numero, invertido = 0, resto;
         Scanner consola = new Scanner(System.in);
@@ -13,6 +13,11 @@ public class Ejercicio1 {
             invertido = invertido * 10 + resto;
             numero /= 10;
             }
-            System.out.println("Número invertido: " + invertido);
+            if(invertido==numero){
+                System.out.println("Tú número es capicúa");
+            }
+            else {
+                System.out.println("El número no es capucúa");
+            }
         }
     }
