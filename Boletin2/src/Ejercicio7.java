@@ -2,26 +2,32 @@ import java.util.Scanner;
 
 public class Ejercicio7 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n1, n2;
+        Scanner scanner = new Scanner(System.in);
+        int num1, num2;
+
         do {
-            System.out.print("Introduce el primer número (positivo): ");
-            n1 = sc.nextInt();
-        } while (n1 <= 0);
+            System.out.print("Ingrese el primer número entero (> 0): ");
+            num1 = scanner.nextInt();
+        } while (num1 <= 0);
+
         do {
-            System.out.print("Introduce el segundo número (positivo): ");
-            n2 = sc.nextInt();
-        } while (n2 <= 0);
-        int mcd = calcularMCD(n1, n2);
-        System.out.println("El M.C.D. de " + n1 + " y " + n2 + " es " + mcd);
-        sc.close();
+            System.out.print("Ingrese el segundo número entero (> 0): ");
+            num2 = scanner.nextInt();
+        } while (num2 <= 0);
+
+        int mcd = calcularMCD(num1, num2);
+
+        System.out.println("El máximo común divisor de " + num1 + " y " + num2 + " es: " + mcd);
+
+        scanner.close();
     }
     public static int calcularMCD(int a, int b) {
         while (b != 0) {
-            int resto = a % b;
-            a = b;
-            b = resto;
+            int temp = b;
+            b = a % b;
+            a = temp;
         }
         return a;
     }
 }
+
