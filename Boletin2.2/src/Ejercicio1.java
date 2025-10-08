@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class Ejercicio1 {
     public static void main(String[] args) {
         int numero, invertido = 0, resto;
-        Scanner consola = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Introduce un número: ");
-        numero = consola.nextInt();
+        numero = sc.nextInt();
 
         while (numero > 0) {
             resto = numero % 10;
