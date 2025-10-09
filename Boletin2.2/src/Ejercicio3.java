@@ -11,16 +11,14 @@ public class Ejercicio3 {
         final int V = 5;
         final int I = 1;
         Scanner sc = new Scanner(System.in);
-        String numRomano;
+        String NumRomano;
         int acumulado = 0;
         int temporal = 0;
         int anterior = Integer.MAX_VALUE;
         System.out.print("Introduce el número romano: ");
-        numRomano = sc.nextLine();
-
-
-        for (int i = 0; i < numRomano.length(); i++) {
-            char letraActual = numRomano.charAt(i);
+        NumRomano = sc.nextLine();
+        for (int i = 0; i < NumRomano.length(); i++) {
+            char letraActual = NumRomano.charAt(i);
             int valorDeLetra = 0;
 
 
@@ -54,14 +52,11 @@ public class Ejercicio3 {
                     break;
                 }
             }
-
-
             if (valorDeLetra < anterior) {
                 if (temporal > 0) {
 
                     acumulado += temporal;
                 }
-
                 temporal = valorDeLetra;
             } else if (valorDeLetra == anterior) {
 
@@ -77,8 +72,6 @@ public class Ejercicio3 {
         if (temporal > 0) {
             acumulado += temporal;
         }
-
-
-        System.out.printf("El número %s en decimal es %d", numRomano, acumulado);
+        System.out.printf("El número %s en decimal es %d", NumRomano, acumulado);
     }
 }
