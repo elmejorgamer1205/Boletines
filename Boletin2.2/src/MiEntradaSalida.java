@@ -44,6 +44,6 @@ public class MiEntradaSalida {
             System.out.printf("El número está fuera del rango %d-%d", min, max);
             num = leerEntero(mensaje);
         }
-        return num;
+        return num
     }
 }
