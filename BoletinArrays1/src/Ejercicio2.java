@@ -8,9 +8,11 @@ public class Ejercicio2 {
             }
         }*/
         for (int numero : x) {
-            if (numero < 0);
-            contador++;
+            if (numero < 0) {
+                contador++;
             }
+            System.out.println("Hay " + contador + " números");
 
+        }
     }
 }
