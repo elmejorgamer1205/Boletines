@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Ejercicio3 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         //La cantidad de espacios que deseamos que tenga el array
@@ -94,3 +94,4 @@ public class Ejercicio3 {
         System.out.println("La media de los números introducidos es: " + media);
 
     }
+}
