@@ -15,11 +15,7 @@ public class Ejercicio2 {
             System.out.println("introduce solo los números 1 y 0 para la conversión");
             numBinario = sc.nextInt();
         }
-        //Creo un bucle For porque como el número ya esta establecido por el usario y no lo puede cambiar puedo recorrer una por una cada sección de ese número para hacer el cálculo
-        for (int i = 0; i < numBinario; i++) {
-            numDecimal= numBinario*10;
-            System.out.println("Tú número binario sería: "+numDecimal);
-        }
+
     }
 }
 
