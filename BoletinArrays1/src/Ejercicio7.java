@@ -1,7 +1,7 @@
 public class Ejercicio7 {
     public static void main(String[] args) {
         int[] miArray = {1, 2, 3, 4, 5};
-        if (contieneElemento(miArray, 7)) {
+        if (contieneElemento(miArray, 0)) {
             System.out.println("El elemento esta contenido");
         } else {
             System.out.println("El elemento no esta contenido");
