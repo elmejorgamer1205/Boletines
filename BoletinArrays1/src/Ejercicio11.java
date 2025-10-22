@@ -8,13 +8,6 @@ public class Ejercicio11 {
         //Imprimo por pantalla la mezcla de los dos Arrays con solo los números repetidos
         System.out.println(Arrays.toString(mezclaArrays1y2(array1,array2)));
     }
-
-    /**mezcla de Arrays 1 y 2
-     *
-     * @param array1
-     * @param array2
-     * @return
-     */
     public static int[] mezclaArrays1y2(int[] array1,int[] array2){
         int size= 0;
         int[] numComunes = new int[array1.length];
