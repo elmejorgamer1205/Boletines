@@ -7,7 +7,6 @@ public class Ejercicio12 {
         System.out.println(Arrays.toString(burbuja));
 
     }
-
     public static void metodoBurbuja(int[] burbuja) {
         int num = burbuja.length;
         for (int i = 0; i < num - 1; i++) {
