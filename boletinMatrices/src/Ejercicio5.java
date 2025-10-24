@@ -1,4 +1,4 @@
-public class Ejercicio5 {
+public class Ejercicio5{
     public static void main(String[] args) {
         int[][] matriz = {{1, 3, 5}, {0, 2, 7}};
         ImprimirEnUnaSolaLinia(matriz);
@@ -12,3 +12,4 @@ public class Ejercicio5 {
         }
     }
 }
+
