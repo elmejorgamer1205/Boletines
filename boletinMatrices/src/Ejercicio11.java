@@ -15,21 +15,17 @@ public class Ejercicio11 {
             }
             System.out.println();
         }
-
         if (comprobarInverso(matriz1, matriz2)) {
-            System.out.println("La matriz es simétrica");
+            System.out.println("La matriz es inversa");
         } else {
-            System.out.println("La matriz no es simétrica");
+            System.out.println("La matriz no es inversa");
         }
-
-
     }
 
     public static boolean comprobarInverso(int[][] matriz1, int[][] matriz2) {
         if (matriz1.length != matriz2.length || matriz1[0].length != matriz2[0].length) {
             return false;
         }
-
         int filas = matriz1.length;
         int columnas = matriz1[0].length;
 
