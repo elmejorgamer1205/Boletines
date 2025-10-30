@@ -34,4 +34,3 @@ public class Ejercicio16 {
         return resultado;
     }
 }
-
