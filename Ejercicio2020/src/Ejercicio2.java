@@ -37,11 +37,8 @@ public class Ejercicio2 {
     }
 
     public static boolean florece(int[][] jardin, int fila, int columna) {
-        if (hayAgua(jardin, fila, columna) && hayAbeja(jardin, fila, columna) && (!hayMalaHierba(jardin, fila, columna) || hayGusanoComeHierba(jardin, fila, columna) && hayMalaHierba(jardin, fila, columna))) {
-            return true;
-        } else {
-            return false;
-        }
+        return (hayAgua(jardin, fila, columna) && hayAbeja(jardin, fila, columna) && (!hayMalaHierba(jardin, fila, columna) || hayGusanoComeHierba(jardin, fila, columna) && hayMalaHierba(jardin, fila, columna)));
+
     }
 
     public static boolean hayAgua(int[][] jardin, int fila, int col) {
