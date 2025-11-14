@@ -1,5 +1,7 @@
 package Ejercicio1;
 
+import utils.MiEntradaSalida;
+
 import java.util.Scanner;
 
 public class Rectángulo {
@@ -52,4 +54,5 @@ public class Rectángulo {
         System.out.println("\nEl perímetro del rectángulo sería: " + r.perimetroRectangulo());
 
     }
+
 }
