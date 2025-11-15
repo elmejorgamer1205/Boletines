@@ -14,20 +14,20 @@ public class Principal {
 
         while (opciones) {
 
-            String comando = MiEntradaSalida.leerLinea("¿Qué desea realizar?: \n");
+            String comando = MiEntradaSalida.leerLinea("¿Qué desea realizar?: ");
 
             switch (comando.toLowerCase()) {
 
                 case "reintegro de dinero":
-                    c.retirarDinero(MiEntradaSalida.solicitarEnteroEnRangoBanco("¿Cuánto quiere reintegrar?", 1, 2500 ));
+                    c.retirarDinero(MiEntradaSalida.solicitarEnteroEnRangoBanco("¿\ncontar un Cuánto quiere reintegrar?", 1, 2500 ));
                     System.out.println("\nReintegro exitoso \n");
                     break;
                 case "ingresar dinero":
-                    c.ingresarDinero(MiEntradaSalida.solicitarEnteroEnRangoBanco("¿Cuánto quiere ingresar?", 1, 2500));
+                    c.ingresarDinero(MiEntradaSalida.solicitarEnteroEnRangoBanco("\n¿Cuánto quiere ingresar?", 1, 2500));
                     System.out.println("\n¡Ingreso exitoso \n");
                     break;
                 case "mirar saldo de la cuenta":
-                    System.out.println("\nSu cuenta actualmente tiene: " + c.getSaldoActual() + "€");
+                    System.out.println("\nSu cuenta actualmente tiene: " + c.getSaldoActual() + "€\n");
                     break;
                 case "ayuda":
                     ayuda();
