@@ -43,7 +43,6 @@ public class Rectángulo {
 
     public static void main(String[] args) {
         Rectángulo r = new Rectángulo();
-        Scanner sc = new Scanner(System.in);
         int ancho = MiEntradaSalida.solicitarEnteroEnRango("Dime el ancho de tú rectángulo: ", 0, 20);
         int longitud = MiEntradaSalida.solicitarEnteroEnRango("Dime la longitud de tú rectángulo: ", 0, 20);
 
