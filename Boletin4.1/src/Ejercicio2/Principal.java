@@ -1,5 +1,6 @@
 package Ejercicio2;
 
+import Exceptions.CuentaExceptions;
 import utils.MiEntradaSalida;
 
 public class Principal {
@@ -21,7 +22,12 @@ public class Principal {
             switch (comando.toLowerCase()) {
 
                 case "reintegro de dinero":
-                    c.retirarDinero(MiEntradaSalida.solicitarEnteroEnRangoBanco("¿\ncontar un Cuánto quiere reintegrar?", 1, 2500 ));
+                    try {
+                        int cantidad = MiEntradaSalida.solicitarEntero("\n ¿Cuánto quiere reintegrar?");
+                        c.retirarDinero(cantidad);
+                    }catch (CuentaExceptions e){
+                        System.out.println(e.getMessage());
+                    }
                     System.out.println("\nReintegro exitoso \n");
                     break;
                 case "ingresar dinero":
