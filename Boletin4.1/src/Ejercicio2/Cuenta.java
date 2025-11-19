@@ -19,11 +19,36 @@ public class Cuenta {
     }
 
     public int getSaldoInicial() {
+
         return saldoInicial;
     }
 
     public int getSaldoActual() {
+
         return saldoActual;
+    }
+
+    public int getRetirarSaldo() {
+
+        return retirarSaldo;
+    }
+
+    public int getContadorIngresos() {
+        return contadorIngresos;
+    }
+
+    public void setContadorIngresos(int contadorIngresos) {
+
+        this.contadorIngresos = contadorIngresos;
+    }
+
+    public int getContadorReintegros() {
+        return contadorReintegros;
+    }
+
+    public void setContadorReintegros(int contadorReintegros) {
+
+        this.contadorReintegros = contadorReintegros;
     }
 
     public void ingresarDinero(int cantidad) throws CuentaExceptions {
@@ -41,26 +66,6 @@ public class Cuenta {
         saldoActual -= cantidad;
         retirarSaldo += cantidad;
         contadorReintegros++;
-    }
-
-    public int getRetirarSaldo() {
-        return retirarSaldo;
-    }
-
-    public int getContadorIngresos() {
-        return contadorIngresos;
-    }
-
-    public void setContadorIngresos(int contadorIngresos) {
-        this.contadorIngresos = contadorIngresos;
-    }
-
-    public int getContadorReintegros() {
-        return contadorReintegros;
-    }
-
-    public void setContadorReintegros(int contadorReintegros) {
-        this.contadorReintegros = contadorReintegros;
     }
 }
 
