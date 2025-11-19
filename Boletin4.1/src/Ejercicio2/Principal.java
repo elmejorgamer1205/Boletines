@@ -8,9 +8,6 @@ public class Principal {
     public static void main(String[] args) {
 
         Cuenta c = new Cuenta();
-        c.getSaldoActual();
-        c.getContadorIngresos();
-        c.getContadorReintegros();
 
         System.out.println("\nBienvenido a C.S.S Bank's, nos alegra verle por aquí\n");
         boolean opciones = true;
@@ -23,22 +20,30 @@ public class Principal {
 
                 case "reintegro de dinero":
                     try {
-                        int cantidad = MiEntradaSalida.solicitarEntero("\n ¿Cuánto quiere reintegrar?");
-                        c.retirarDinero(cantidad);
+                        int cantidad1 = MiEntradaSalida.solicitarEntero("\n ¿Cuánto quiere reintegrar?");
+                        c.retirarDinero(cantidad1);
+                        System.out.println("¡¡¡ Reintegro exitoso ");
                     }catch (CuentaExceptions e){
                         System.out.println(e.getMessage());
                     }
-                    System.out.println("\nReintegro exitoso \n");
                     break;
                 case "ingresar dinero":
-                    c.ingresarDinero(MiEntradaSalida.solicitarEnteroEnRangoBanco("\n¿Cuánto quiere ingresar?", 1, 2500));
-                    System.out.println("\n¡Ingreso exitoso \n");
+                    try {
+                        int cantidad2 = MiEntradaSalida.solicitarEntero("\n ¿Cuánto quieres ingresar?");
+                        c.ingresarDinero(cantidad2);
+                        System.out.println("\n ¡¡¡Ingreso exitoso!!!");
+                    }catch (CuentaExceptions e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
-                case "mirar saldo de la cuenta":
+                case "mirar cuenta":
                     System.out.println("\nSu cuenta actualmente tiene: " + c.getSaldoActual() + "€\n");
                     break;
-                case "mirar número de reintegros e ingresos":
-                    System.out.println("Ha realizado "+ c.getContadorReintegros() + " reintegros y "+ c.getContadorIngresos()+ " ingresos realizados");
+                case "mirar número de reintegros":
+                    System.out.println("Ha realizado "+ c.getContadorReintegros() + " reintegro/s realizados ");
+                    break;
+                case "mirar número de ingresos":
+                    System.out.println("Ha realizado "+ c.getContadorIngresos()+ " ingreso/s realizados");
                     break;
                 case "ayuda":
                     ayuda();
@@ -58,8 +63,9 @@ public class Principal {
         System.out.print("\n====================Opciones====================\n");
         System.out.print("> reintegro de dinero\n");
         System.out.print("> ingresar dinero\n");
-        System.out.print("> mirar saldo de la cuenta\n");
-        System.out.print("> mirar número de reintegros e ingresos\n");
+        System.out.print("> mirar cuenta\n");
+        System.out.print("> mirar número de reintegros\n");
+        System.out.print("> mirar número de ingresos\n");
         System.out.print("> salir\n");
         System.out.print("=============================================\n \n");
     }

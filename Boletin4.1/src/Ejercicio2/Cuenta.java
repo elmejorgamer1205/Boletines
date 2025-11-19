@@ -28,7 +28,7 @@ public class Cuenta {
 
     public void ingresarDinero(int cantidad) throws CuentaExceptions {
         if (cantidad < 0 || cantidad > 2500) {
-            throw new CuentaExceptions("Error, no puede ingresar dinero negativo");
+            throw new CuentaExceptions("Error, no puede ingresar dinero negativo o mayor a 2500€");
         }
         saldoActual += cantidad;
         contadorIngresos++;
