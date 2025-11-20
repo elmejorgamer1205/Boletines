@@ -7,7 +7,8 @@ import utils.MiEntradaSalida;
 public class Principal {
     public static void main(String[] args) {
 
-        MáquinaCafé M = new MáquinaCafé();
+        MáquinaCafé m = new MáquinaCafé();
+        m.getMonedero();
 
         System.out.println("\nVas a tomar café\n");
         boolean servicio = true;
@@ -31,7 +32,7 @@ public class Principal {
 
                     break;
                 case "Vaciar monedero":
-
+                    System.out.println("Has vaciado "+ m.getMonedero() +" € del monedero");
                     break;
                 case "Opciones":
                     opciones();

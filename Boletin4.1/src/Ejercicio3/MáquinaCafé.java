@@ -1,6 +1,7 @@
 package Ejercicio3;
 
 import Exceptions.CuentaExceptions;
+import Exceptions.MaquinaCafeException;
 import utils.MiEntradaSalida;
 
 public class MáquinaCafé {
@@ -9,12 +10,15 @@ public class MáquinaCafé {
     public int cafe;
     public int leche;
     public double monedero;
+    public final double PRECIOCAFE = 1;
+    public final double PRECIOLECHE = 0.8;
+    public final double PRECIOCAFECONLECHE = 1.5;
 
     public MáquinaCafé() {
-        vasos = 80;
-        leche = 50;
-        cafe = 50;
-        monedero = 83.75;
+        setVasos(80);
+        setLeche(50);
+        setCafe(50);
+        setMonedero(10);
     }
 
     public int getCafe() {
@@ -59,26 +63,21 @@ public class MáquinaCafé {
                 '}';
     }
 
-    public void colsultarMaquina(){
+    public void colsultarMaquina() {
+        System.out.println(toString());
+    }
+
+    public void rellenarMaquina(int cafe, int leche, int vasos) throws CuentaExceptions {
+        setVasos(80);
+        setLeche(50);
+        setCafe(50);
 
     }
 
-    public void rellenarMaquina(int cafe, int leche, int vasos) throws CuentaExceptions{
-        if (cafe >= 50 && leche >= 50 && vasos >= 80){
-            throw new CuentaExceptions("Ya está lleno");
-        }
-
+    public void vaciarMonedero(int monedero) throws CuentaExceptions {
+        this.monedero -= this.monedero;
     }
-
-    public void vaciarMonedero(int monedero) throws CuentaExceptions{
-        if(monedero >= 0){
-            throw new CuentaExceptions("No te queda dinero en el monedero");
-        }
-    }
-
-    public void servicio(int cafe, int leche, int vasos, int cantidadCafe, int cantidadLeche, int cantidadVasos) throws CuentaExceptions {
-
-    }
-
-
 }
+
+
+
