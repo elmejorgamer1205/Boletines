@@ -1,24 +1,22 @@
 package Ejercicio3;
 
-import Exceptions.CuentaExceptions;
 import Exceptions.MaquinaCafeException;
-import utils.MiEntradaSalida;
 
 public class MáquinaCafé {
 
-    public int vasos;
-    public int cafe;
-    public int leche;
-    public double monedero;
-    public final double PRECIOCAFE = 1;
-    public final double PRECIOLECHE = 0.8;
-    public final double PRECIOCAFECONLECHE = 1.5;
+    private int vasos;
+    private int cafe;
+    private int leche;
+    private double monedero;
+    public static final double PRECIOCAFE = 1.0;
+    public static final double PRECIOLECHE = 0.8;
+    public static final double PRECIOCAFECONLECHE = 1.5;
 
     public MáquinaCafé() {
         setVasos(80);
         setLeche(50);
         setCafe(50);
-        setMonedero(10);
+        setMonedero(10.0);
     }
 
     public int getCafe() {
@@ -63,19 +61,92 @@ public class MáquinaCafé {
                 '}';
     }
 
-    public void colsultarMaquina() {
+    public void consultarMaquina() {
         System.out.println(toString());
     }
 
-    public void rellenarMaquina(int cafe, int leche, int vasos) throws CuentaExceptions {
-        setVasos(80);
-        setLeche(50);
-        setCafe(50);
-
+    public void rellenarMaquina() throws MaquinaCafeException {
+        if (cafe < 0 || leche < 0 || vasos < 0) {
+            throw new MaquinaCafeException("Los valores para rellenar no pueden ser negativos.");
+        }
+        setCafe(cafe);
+        setLeche(leche);
+        setVasos(vasos);
     }
 
-    public void vaciarMonedero(int monedero) throws CuentaExceptions {
-        this.monedero -= this.monedero;
+    public void ingresarDinero(double cantidad) throws MaquinaCafeException {
+        if (cantidad <= 0) {
+            throw new MaquinaCafeException("La cantidad a ingresar debe ser positiva.");
+        }
+        monedero += cantidad;
+    }
+
+
+    public double cafeSolo(double dineroIntroducido) throws MaquinaCafeException {
+        if (vasos < 1){
+            throw new MaquinaCafeException("No hay vasos disponibles.");
+        }
+        if (cafe < 1){
+            throw new MaquinaCafeException("No hay café suficiente.");
+        }
+        if(dineroIntroducido < PRECIOCAFE){
+            throw new MaquinaCafeException("No has introducido suficiente dinero");
+        }
+        double cambio = dineroIntroducido - PRECIOCAFE;
+        if (cambio > monedero){
+            throw new MaquinaCafeException("No disponemos de cambio suficiente.");
+        }
+        vasos--;
+        cafe--;
+        monedero += PRECIOCAFE;
+
+        return cambio;
+    }
+
+    public double leche(double dineroIntroducido) throws MaquinaCafeException {
+        if (vasos < 1){
+            throw new MaquinaCafeException("No hay vasos disponibles.");
+        }
+        if (leche < 1){
+            throw new MaquinaCafeException("No hay leche suficiente.");
+        }
+        if(dineroIntroducido < PRECIOCAFE){
+            throw new MaquinaCafeException("No has introducido suficiente dinero");
+        }
+        double cambio = dineroIntroducido - PRECIOLECHE;
+        if (cambio > monedero){
+            throw new MaquinaCafeException("No disponemos de cambio suficiente.");
+        }
+        vasos--;
+        leche--;
+        monedero += PRECIOLECHE;
+
+        return cambio;
+    }
+
+    public double cafeConLeche( double dineroIntroducido) throws MaquinaCafeException {
+        if (vasos < 1){
+            throw new MaquinaCafeException("No hay vasos disponibles.");
+        }
+        if (cafe < 1){
+            throw new MaquinaCafeException("No hay café suficiente.");
+        }
+        if (leche < 1){
+            throw new MaquinaCafeException("No hay leche suficiente.");
+        }
+        if (dineroIntroducido < PRECIOCAFE){
+            throw new MaquinaCafeException("No has introducido suficiente dinero");
+        }
+        double cambio = dineroIntroducido - PRECIOLECHE;
+        if (cambio > monedero){
+            throw new MaquinaCafeException("No disponemos de cambio suficiente.");
+        }
+        vasos--;
+        cafe--;
+        leche--;
+        monedero += PRECIOCAFECONLECHE;
+
+        return cambio;
     }
 }
 
