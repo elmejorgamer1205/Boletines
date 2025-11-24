@@ -74,7 +74,7 @@ public class Principal {
         System.out.print(">Estado de la máquina\n");
         System.out.print("> Salir\n");
         System.out.print("==============================================\n \n");
-    }
+
 }
 
 
