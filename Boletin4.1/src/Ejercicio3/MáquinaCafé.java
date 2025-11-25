@@ -81,7 +81,10 @@ public class MáquinaCafé {
         monedero += cantidad;
     }
 
-
+    public double vaciarMonedero() {
+        this.monedero -= this.monedero;
+        return monedero;
+    }
     public double cafeSolo(double dineroIntroducido) throws MaquinaCafeException {
         if (vasos < 1){
             throw new MaquinaCafeException("No hay vasos disponibles.");

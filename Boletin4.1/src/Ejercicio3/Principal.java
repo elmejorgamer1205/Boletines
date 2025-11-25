@@ -50,7 +50,7 @@ public class Principal {
                     m.rellenarMaquina();
                     break;
                 case "vaciar monedero":
-                    System.out.println("Has vaciado "+ m.getMonedero() +" € del monedero");
+                    System.out.println("Has vaciado "+ m.vaciarMonedero() +" € del monedero");
                     break;
                 case "opciones":
                     opciones();
