@@ -1,8 +1,6 @@
 package Ejercicio1;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.Month;
 
 public class MétodoPersona {
 
@@ -13,13 +11,14 @@ public class MétodoPersona {
     private float altura;
     private float peso;
 
-    public MétodoPersona(String nombre, LocalDate fechaDeNacimiento, int dni, char sexo, float altura, float peso){
+    public MétodoPersona(){
         setNombre(nombre);
         setFechaDeNacimiento(fechaDeNacimiento);
         setDni(dni);
         setSexo(sexo);
         setAltura(altura);
         setPeso(peso);
+
     }
 
     public float getAltura() {
@@ -63,10 +62,27 @@ public class MétodoPersona {
     }
 
     public int getDni() {
+
         return dni;
     }
 
     public void setDni(int dni) {
         this.dni = dni;
+    }
+
+    @Override
+
+    public String toString(){
+        return "MétodoPersona{" +
+                "nombre= " + nombre +
+                ", fecha de nacimiento= " + fechaDeNacimiento +
+                ", DNI= " + dni +
+                ", sexo= " + sexo +
+                ", altura= " + altura +
+                ", peso= " + peso + "}";
+    }
+
+    public void consultarDatos(){
+        System.out.println(toString());
     }
 }

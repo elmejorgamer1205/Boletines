@@ -122,7 +122,7 @@ public class MiEntradaSalida {
             // Si se lanza la excepción (porque el usuario no escribió nada).
             catch (StringIndexOutOfBoundsException e) { // Es más específico que IndexOutOfBoundsException
                 // 2. Mensaje de error específico.
-                System.out.println("Error: No ha introducido ningún carácter. Inténtelo de nuevo.");
+                System.out.println("Error: No ha introducido bien los caracteres. Inténtelo de nuevo.");
             }
 
         }
