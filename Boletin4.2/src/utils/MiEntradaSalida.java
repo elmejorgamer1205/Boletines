@@ -38,7 +38,7 @@ public class MiEntradaSalida {
         return integer;
     }
 
-    public static int solicitarEnteroPositivo(String mensaje) {
+    public static int solicitarEnteroPositivo(String mensaje, boolean b) {
         // Variable que almacenará el entero introducido por teclado.
         int integer = 0;
         // Variable que almacenará un booleano que indicará si se le debe volver a pedir el dato al usuario.
@@ -71,7 +71,7 @@ public class MiEntradaSalida {
         return integer;
     }
 
-    public static int solicitarEnteroEnRango(String mensaje, int limiteInferior, int limiteSuperior) {
+    public static int solicitarEnteroEnRango(String mensaje, int limiteInferior, int limiteSuperior) throws MiEntradaSalidaExceptions{
         // Variable que almacenará el entero introducido por teclado.
         int integer = 0;
         // Variable que almacenará un booleano que indicará si se le debe volver a pedir el dato al usuario.
@@ -219,9 +219,9 @@ public class MiEntradaSalida {
     }
 
     public static LocalDate fecha(String mensaje) throws MiEntradaSalidaExceptions {
-        int año = solicitarEnteroPositivo("Introduce el año: ");
-        int mes = solicitarEnteroPositivo("Introduce el mes: ");
-        int dia = solicitarEnteroPositivo("Introduce el día: ");
+        int año = solicitarEnteroPositivo("Introduce el año: ", false);
+        int mes = solicitarEnteroPositivo("Introduce el mes: ", false);
+        int dia = solicitarEnteroPositivo("Introduce el día: ", false);
         try {
             return LocalDate.of(año, mes, dia);
         }catch (DateTimeException e){

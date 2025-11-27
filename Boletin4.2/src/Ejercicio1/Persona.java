@@ -44,7 +44,7 @@ public class Persona {
             }
         }
 
-        float altura = MiEntradaSalida.solicitarFloat("Introduzca su altura (en cm): ");
+        float altura = MiEntradaSalida.solicitarFloat("Introduzca su altura (en m): ");
         float peso = MiEntradaSalida.solicitarFloat("Introduzca su peso (en kg): ");
 
         p = new MétodoPersona();
