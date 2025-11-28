@@ -44,6 +44,7 @@ public class Partido{
             this.quiniela = '2';
             golesEquipoLocal = numGoles[1];
             golesEquipoVisitante = numGoles[0];
+            jugado = true;
         }
     }
 
