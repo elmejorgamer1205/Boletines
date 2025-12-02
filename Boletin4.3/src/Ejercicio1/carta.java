@@ -41,7 +41,7 @@ public class carta {
 
     }
 
-    public void repartiCartas() throws cartaException{
+    public void repartirCartas() throws cartaException{
 
     }
 
