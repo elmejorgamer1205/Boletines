@@ -265,4 +265,16 @@ public class MiEntradaSalida {
         }
         System.out.println();
     }
+
+    public static int generaAleatorioEntre(int min, int max, boolean seAceptaElMaximo) {
+        int ventana;
+
+        if (seAceptaElMaximo) {
+            ventana = max - min + 1;
+        } else {
+            ventana = max - min;
+        }
+        return (int) (Math.random() * ventana) + min;
+    }
+
 }

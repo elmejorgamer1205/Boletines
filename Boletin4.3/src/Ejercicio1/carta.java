@@ -1,57 +1,25 @@
 package Ejercicio1;
 
-import Exceptions.cartaException;
-
 public class carta {
-
     private String palo;
-    private String número;
+    private int número;
 
-
-    public carta() {
-        setNúmero(número);
+    public carta(String palo, int numero) {
         setPalo(palo);
+        setNúmero(numero);
     }
 
-    public String getNúmero() {
-        return número;
-    }
-
-    public void setNúmero(String número) {
+    private void setNúmero(int número) {
         this.número = número;
     }
 
-    public String getPalo() {
-        return palo;
-    }
-
-    public void setPalo(String palo) {
+    private void setPalo(String palo) {
         this.palo = palo;
     }
 
-    public void crearBaraja(){
-
-    }
-
-    public void mostrarBaraja() throws cartaException{
-        System.out.println(toString());
-    }
-
-    public void barajarBaraja() throws cartaException{
-
-    }
-
-    public void repartirCartas() throws cartaException{
-
-    }
-
-    public void cartasRestantes() throws cartaException{
-
-    }
-
     @Override
-
-    public String toString(){
-        return "";
+    public String toString() {
+        return número +" de "+palo;
     }
 }
+
