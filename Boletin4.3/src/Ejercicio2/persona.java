@@ -39,11 +39,5 @@ public class persona {
     public void borrarMensajeRecibidoMásAntiguo() throws personaException{
 
     }
-
-    public void agregarMensajeEnviado(int mensaje) {
-        mensajesEnviados = Arrays.copyOf(mensajesEnviados, mensajesEnviados.length + 1);
-        mensajesEnviados[mensajesEnviados.length - 1] = mensaje;
-    }
-
 }
 
