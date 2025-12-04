@@ -10,7 +10,7 @@ public class persona {
     private mensaje[] mensajesRecibidos = new mensaje[5];
     private mensaje[] mensajesEnviados = new mensaje[5];
 
-    public persona(){
+    public persona() {
         setNombre(nombre);
         setMensajesEnviados(mensajesEnviados);
         setMensajesRecibidos(mensajesRecibidos);
@@ -28,14 +28,14 @@ public class persona {
         this.mensajesRecibidos = mensajesRecibidos;
     }
 
-    public void enivarMensaje(String asunto, String cuerpo, persona remitente) throws personaException{
-        if(asunto == null || asunto.isBlank() || cuerpo == null || cuerpo.isBlank() || remitente == null) {
+    public void enivarMensaje(String asunto, String cuerpo, persona remitente) throws personaException {
+        if (asunto == null || asunto.isBlank() || cuerpo == null || cuerpo.isBlank() || remitente == null) {
             throw new personaException("Error: Al mensaje le falta información");
         }
-        if(estaLLenoEnvidado()) {
+        if (estaLLenoEnvidado()) {
             throw new personaException("Error: el buzóne está lleno");
         }
-        if (estaLlenoRecibido(remitente)){
+        if (estaLlenoRecibido(remitente)) {
             throw new personaException("Error: el buzón del remitente está lleno");
         }
 
@@ -58,35 +58,35 @@ public class persona {
     }
 
 
-    public boolean estaLlenoRecibido(persona remitente){
+    public boolean estaLlenoRecibido(persona remitente) {
         for (int i = 0; i < mensajesRecibidos.length; i++) {
-            if (){
+            if () {
 
             }
         }
     }
 
-    public boolean estaLLenoEnvidado(){
+    public boolean estaLLenoEnvidado() {
         for (int i = 0; i < mensajesEnviados.length; i++) {
-            if (){
+            if () {
 
             }
         }
     }
 
-    public void borrarMensajeEnvidadoMasAntiguo(){
-        for (int i = 0; i < mensajesEnviados.length -1 && mensajesEnviados[i] != null; i++) {
+    public void borrarMensajeEnvidadoMasAntiguo() {
+        for (int i = 0; i < mensajesEnviados.length - 1 && mensajesEnviados[i] != null; i++) {
             mensajesEnviados[i] = mensajesEnviados[i + 1];
         }
         mensajesEnviados[mensajesEnviados.length - 1] = null;
     }
 
-    public void borrarMensajeRecibidoMasAntiguo() throws personaException{
-        for (int i = 0; i < mensajesRecibidos.length -1 && mensajesRecibidos[i] != null; i++) {
+    public void borrarMensajeRecibidoMasAntiguo() throws personaException {
+        for (int i = 0; i < mensajesRecibidos.length - 1 && mensajesRecibidos[i] != null; i++) {
             mensajesRecibidos[i] = mensajesRecibidos[i + 1];
         }
         mensajesRecibidos[mensajesRecibidos.length - 1] = null;
     }
-    }
 }
+
 

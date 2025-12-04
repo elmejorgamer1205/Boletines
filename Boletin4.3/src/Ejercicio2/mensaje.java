@@ -9,12 +9,12 @@ public class mensaje {
     private persona destinatario;
     private persona remitente;
 
-    public mensaje() {
-        this.asunto = getAsunto();
-        this.cuerpo = getCuerpo();
-        this.fechaDeEnvio = getFechaDeEnvio();
-        this.remitente = getRemitente();
-        this.destinatario = getDestinatario();
+    public mensaje(String asunto, String cuerpo, persona destinatario,persona remitente, LocalDateTime fechaDeEnvio) {
+        this.asunto = asunto;
+        this.cuerpo = cuerpo;
+        this.destinatario = destinatario;
+        this.fechaDeEnvio = fechaDeEnvio;
+        this.remitente = remitente;
     }
 
     public String getAsunto() {
