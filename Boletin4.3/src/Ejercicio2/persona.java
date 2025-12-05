@@ -60,18 +60,20 @@ public class persona {
 
     public boolean estaLlenoRecibido(persona remitente) {
         for (int i = 0; i < mensajesRecibidos.length; i++) {
-            if () {
-
+            if (mensajesRecibidos[i] == null) {
+                return false;
             }
         }
+        return true;
     }
 
     public boolean estaLLenoEnvidado() {
         for (int i = 0; i < mensajesEnviados.length; i++) {
-            if () {
-
+            if (mensajesEnviados[i] == null) {
+                return false;
             }
         }
+        return true;
     }
 
     public void borrarMensajeEnvidadoMasAntiguo() {
