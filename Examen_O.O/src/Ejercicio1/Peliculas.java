@@ -13,14 +13,14 @@ public class Peliculas {
     private String etiquetas;
     private double valoracion;
 
-    public Peliculas() throws BibliotecaException {
-        setTitulo(titulo);
+    public Peliculas(String titulo, int año, String director, double presupuesto, double recaudacion, String sinopsis, String etiquetas) throws BibliotecaException {
+        setTitulo(this.titulo);
         setAñoDeEstreno(añoDeEstreno);
-        setDirector(director);
-        setPresupuesto(presupuesto);
-        setRecaudacion(recaudacion);
-        setSinopsis(sinopsis);
-        setEtiquetas(etiquetas);
+        setDirector(this.director);
+        setPresupuesto(this.presupuesto);
+        setRecaudacion(this.recaudacion);
+        setSinopsis(this.sinopsis);
+        setEtiquetas(this.etiquetas);
         setValoracion(valoracion);
     }
 
