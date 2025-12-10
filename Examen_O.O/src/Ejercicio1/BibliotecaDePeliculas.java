@@ -2,67 +2,92 @@ package Ejercicio1;
 
 import Exceptions.BibliotecaException;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class BibliotecaDePeliculas {
 
-    private String[] peliculas = new String[20];
-    private String[] etiquetas = new String[20];
-    private String[] titulo = new String[20];
-    private double[] presupuestoMax = new double[20];
+    public final static int TAMAÑO = 20;
+    private Peliculas[] peliculas = new Peliculas[TAMAÑO];
 
-    public BibliotecaDePeliculas(){
-        setPeliculas(peliculas);
-        setEtiquetas(etiquetas);
-        setTitulo(titulo);
-        setPresupuestoMax(presupuestoMax);
+    public BibliotecaDePeliculas() {
     }
 
-    public void setPeliculas(String[] peliculas) {
-        this.peliculas = peliculas;
-    }
-
-    public void setEtiquetas(String[] etiquetas) {
-        this.etiquetas = etiquetas;
-    }
-
-    public void setTitulo(String[] titulo) {
-        this.titulo = titulo;
-    }
-
-    public void setPresupuestoMax(double[] presupuestoMax) {
-        this.presupuestoMax = presupuestoMax;
-    }
-
-    public void consultarBiblioteca(){
-        System.out.println(toString());
-    }
-
-    public void añadirPelicula()throws BibliotecaException {
+    public void añadirPelicula(Peliculas pelicula) throws BibliotecaException {
         for (int i = 0; i < peliculas.length; i++) {
+            if (peliculas[i] == null) {
+                peliculas[i] = pelicula;
+                return;
+            }
         }
     }
 
-    public void buscarPeliculaEtiqueta()throws BibliotecaException{
-        for (int i = 0; i < etiquetas.length; i++) {
-
+    public String buscarPeliculaEtiqueta(String etiqueta) throws BibliotecaException {
+        StringBuilder devolver = new StringBuilder();
+        for (int i = 0; i < peliculas.length; i++) {
+            if (peliculas[i] != null) {
+                String[] etiquetas = peliculas[i].getEtiquetas().split(",");
+                for (int j = 0; j < etiquetas.length; j++) {
+                    if (etiquetas[j].equalsIgnoreCase(etiqueta)) {
+                        devolver.append(peliculas[i].getTitulo());
+                    }
+                }
+            } else if (peliculas[i] == null) {
+                break;
+            }
         }
-    }
-
-    public void buscarPeliculaTitulo()throws BibliotecaException{
-        for (int i = 0; i < titulo.length; i++) {
-
+        if (devolver.toString().isEmpty()) {
+            throw new BibliotecaException("No hay ninguna película con esa etiqueta");
         }
+        return devolver.toString();
     }
 
-    public void buscarPeliculaPresupuestoMax()throws BibliotecaException{
-        for (int i = 0; i < presupuestoMax.length; i++) {
-
+    public String buscarPeliculaTitulo(String titulo) throws BibliotecaException {
+        for (int i = 0; i < peliculas.length; i++) {
+            if (peliculas[i] != null) {
+                if (titulo.equalsIgnoreCase(peliculas[i].getTitulo())) {
+                    return peliculas[i].toString();
+                }
+            } else if (peliculas[i] == null) {
+                break;
+            }
         }
+        throw new BibliotecaException("Esa película no esta en la biblioteca");
     }
 
-    public void calcularValoracion()throws BibliotecaException{
-
+    public String buscarPeliculaPresupuestoMax(double presupuestoMaximo) throws BibliotecaException {
+        StringBuilder devolver = new StringBuilder();
+        for (int i = 0; i < peliculas.length; i++) {
+            if (peliculas[i] != null) {
+                if (peliculas[i].getPresupuesto() <= presupuestoMaximo) {
+                    devolver.append(peliculas[i].getTitulo());
+                }
+            }
+            else if (peliculas[i] == null) {
+                break;
+            }
+        }
+        if (devolver.toString().isEmpty()) {
+            throw new BibliotecaException("No hay ninguna pelicula con ese presupuesto máximo");
+        }
+        return devolver.toString();
     }
 
+    public String mostrarBiblioteca(){
+        StringBuilder devolver = new StringBuilder();
+        for (Pelicula pelicula : peliculas) {
+            if (pelicula != null) {
+                devolver.append(pelicula.toString());
+            }
+            if (pelicula == null) {
+                break;
+            }
+        }
+        return devolver.toString();
+    }
+    @Override
+    public String toString() {
+        return "Biblioteca{" +
+                "peliculas=" + Arrays.toString(peliculas) +
+                '}';
+    }
 }
