@@ -74,7 +74,7 @@ public class BibliotecaDePeliculas {
 
     public String mostrarBiblioteca(){
         StringBuilder devolver = new StringBuilder();
-        for (Pelicula pelicula : peliculas) {
+        for (Peliculas pelicula : peliculas) {
             if (pelicula != null) {
                 devolver.append(pelicula.toString());
             }

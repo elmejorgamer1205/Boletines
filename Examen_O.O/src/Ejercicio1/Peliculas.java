@@ -6,7 +6,7 @@ public class Peliculas {
 
     private String titulo;
     private int añoDeEstreno;
-    private String direcctor;
+    private String director;
     private double presupuesto;
     private double recaudacion;
     private String sinopsis;
@@ -16,7 +16,7 @@ public class Peliculas {
     public Peliculas() throws BibliotecaException {
         setTitulo(titulo);
         setAñoDeEstreno(añoDeEstreno);
-        setDirecctor(direcctor);
+        setDirector(director);
         setPresupuesto(presupuesto);
         setRecaudacion(recaudacion);
         setSinopsis(sinopsis);
@@ -28,8 +28,8 @@ public class Peliculas {
         this.añoDeEstreno = añoDeEstreno;
     }
 
-    public void setDirecctor(String direcctor) {
-        this.direcctor = direcctor;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
     public void setEtiquetas(String etiquetas) {
@@ -78,5 +78,18 @@ public class Peliculas {
             return 10.0;
         }
         return valoracion;
+    }
+    @Override
+    public String toString() {
+        return "Pelicula{" +
+                "titulo='" + titulo + '\'' +
+                ", añoEstreno=" + añoDeEstreno +
+                ", director='" + director + '\'' +
+                ", presupuesto=" + presupuesto +
+                ", recaudacion=" + recaudacion +
+                ", sipnosis='" + sinopsis + '\'' +
+                ", etiquetas='" + etiquetas + '\'' +
+                ", valoracion=" + valoracion +
+                '}';
     }
 }
