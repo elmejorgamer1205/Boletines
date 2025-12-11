@@ -65,9 +65,6 @@ public class Deposito {
      *
      * @return cantidad actual en el depósito
      */
-    public double getCantidadActual() {
-        return cantidadActual;
-    }
 }
 
 
