@@ -6,17 +6,31 @@ public class Deposito {
     private double cantidadMax;
     private double cantidadAct;
 
-    public Deposito(){
-
+    public Deposito(double cantidadMax, double cantidadAct) {
+        this.cantidadMax = cantidadMax;
+        this.cantidadAct = cantidadAct;
     }
 
-    public int rellenarDeposito(double cantidadMax, double cantidadAct)throws AvionException {
-        if(cantidadAct>cantidadMax || cantidadAct<0){
-            throw new AvionException("ERROR: No se puede realizar esta acción (cantidad invalida de conbustible)");
-        }
+    public double getCantidadAct() {
+        return cantidadAct;
+    }
+
+     private void setCantidadAct(double cantidadAct) {
+        this.cantidadAct = cantidadAct;
+    }
+
+    public double getCantidadMax() {
+        return cantidadMax;
+    }
+
+    private void setCantidadMax(double cantidadMax) {
+        this.cantidadMax = cantidadMax;
+    }
+
+    public double rellenarDeposito(){
         if (cantidadAct < cantidadMax){
             cantidadAct = cantidadMax;
         }
-        return (int) cantidadMax;
+        return cantidadMax;
     }
 }
