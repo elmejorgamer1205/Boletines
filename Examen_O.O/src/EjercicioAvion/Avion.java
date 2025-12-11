@@ -31,12 +31,7 @@ public class Avion {
     public boolean estaListo(){
         try{
             Registros ultimaRevision = getUltimaRevision();
-            if (!getUltimaRevision().isEstado()||ultimaRevision.getFecha().plus(ultimaRevision.getPeriodoDeValidez()).isBefore(LocalDate.now())) {
-                return false;
-            }
-            else {
-                return true;
-            }
+            return getUltimaRevision().isEstado() && !ultimaRevision.getFecha().plus(ultimaRevision.getPeriodoValidez()).isBefore(LocalDate.now());
         }catch (AvionException e){
             return false;
         }
