@@ -6,36 +6,30 @@ import java.time.Period;
 public class Registros {
     private LocalDate fecha;
     private boolean estado;
-    private Period periodoDeValidez;
+    private Period periodoValidez;
 
-    public Registros(boolean estado, LocalDate fecha, Period periodoDeValidez) {
-        this.estado = estado;
+    public Registros(LocalDate fecha, boolean estado, Period periodoValidez) {
         this.fecha = fecha;
-        this.periodoDeValidez = periodoDeValidez;
+        this.estado = estado;
+        this.periodoValidez = periodoValidez;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    @Override
+    public String toString() {
+        return "Registro{" +
+                "estado=" + estado +
+                '}';
+    }
 
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public Period getPeriodoValidez() {
+        return periodoValidez;
     }
 
     public LocalDate getFecha() {
         return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
-
-    public Period getPeriodoDeValidez() {
-        return periodoDeValidez;
-    }
-
-    public void setPeriodoDeValidez(Period periodoDeValidez) {
-        this.periodoDeValidez = periodoDeValidez;
-    }
-
-    public boolean isEstado() {
-        return false;
     }
 }

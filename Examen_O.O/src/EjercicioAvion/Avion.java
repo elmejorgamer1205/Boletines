@@ -3,34 +3,29 @@ package EjercicioAvion;
 import Exceptions.AvionException;
 
 import java.time.LocalDate;
-import java.time.Period;
+import java.util.Arrays;
 
 public class Avion {
     private final static int NUM_REGISTROS = 5;
     private String marca;
     private String modelo;
     private double consumo;
-    private Deposito deposito;
+    private Deposito combustible;
     private Registros[] registros;
 
-    public Avion(double consumo, String marca, String modelo, Deposito deposito) {
-        this.consumo = consumo;
+    public Avion(String marca, String modelo, double consumo, Deposito combustible)throws AvionException {
         this.marca = marca;
         this.modelo = modelo;
-        this.deposito = deposito;
+        setConsumo(consumo);
+        this.combustible = combustible;
         this.registros = new Registros[NUM_REGISTROS];
     }
 
-    public void setConsumo(double consumo) {
+    public void setConsumo(double consumo)throws AvionException {
+        if (consumo <= 0) {
+            throw new AvionException("El consumo no puede ser negativo o 0");
+        }
         this.consumo = consumo;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
     }
 
     public boolean estaListo(){
@@ -57,7 +52,14 @@ public class Avion {
         throw new AvionException("ERROR: El avión no tiene registros de revisiones realizadas actualmente");
     }
 
-    public boolean puedeHacerElRecorrido(double distancia){
-
+    @Override
+    public String toString() {
+        return "Avion{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", consumo=" + consumo +
+                ", combustible=" + combustible +
+                ", ¿Listo para viajar? " + Arrays.toString(registros) +
+                '}';
     }
 }

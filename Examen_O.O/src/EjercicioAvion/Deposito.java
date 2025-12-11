@@ -3,34 +3,33 @@ package EjercicioAvion;
 import Exceptions.AvionException;
 
 public class Deposito {
-    private double cantidadMax;
-    private double cantidadAct;
+    private final int CAPACIDAD_MAX;
+    private double cantidadActual;
 
-    public Deposito(double cantidadMax, double cantidadAct) {
-        this.cantidadMax = cantidadMax;
-        this.cantidadAct = cantidadAct;
+    public Deposito(int capacidadMaxima, double cantidadActual) throws AvionException {
+        if (capacidadMaxima <= 0 ) {throw new AvionException("La capacidad maxima debe ser mayor a 0");}
+        this.CAPACIDAD_MAX = capacidadMaxima;
+        setCantidadActual(cantidadActual);
     }
 
-    public double getCantidadAct() {
-        return cantidadAct;
-    }
-
-     private void setCantidadAct(double cantidadAct) {
-        this.cantidadAct = cantidadAct;
-    }
-
-    public double getCantidadMax() {
-        return cantidadMax;
-    }
-
-    private void setCantidadMax(double cantidadMax) {
-        this.cantidadMax = cantidadMax;
-    }
-
-    public double rellenarDeposito(){
-        if (cantidadAct < cantidadMax){
-            cantidadAct = cantidadMax;
+    private void setCantidadActual(double cantidadActual) throws AvionException {
+        if (cantidadActual<0){
+            throw new AvionException("La cantidad debe ser mayor a 0");
         }
-        return cantidadMax;
+        if (cantidadActual > CAPACIDAD_MAX){
+            throw new AvionException("No puedes meter esa cantidad, no cabe en el deposito");
+        }
+        this.cantidadActual = cantidadActual;
+    }
+
+    @Override
+    public String toString() {
+        return "DepositoCombustible{" +
+                "cantidadActual=" + cantidadActual +
+                '}';
+    }
+
+    public double getCantidadActual() {
+        return cantidadActual;
     }
 }
