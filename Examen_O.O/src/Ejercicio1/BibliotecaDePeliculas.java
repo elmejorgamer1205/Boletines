@@ -12,7 +12,7 @@ public class BibliotecaDePeliculas {
     public BibliotecaDePeliculas() {
     }
 
-    public void añadirPelicula(Peliculas pelicula) throws BibliotecaException {
+    public void añadirPelicula(Peliculas pelicula){
         for (int i = 0; i < peliculas.length; i++) {
             if (peliculas[i] == null) {
                 peliculas[i] = pelicula;
