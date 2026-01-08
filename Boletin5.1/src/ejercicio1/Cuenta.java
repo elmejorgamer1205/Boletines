@@ -68,8 +68,11 @@ public class Cuenta {
         numeroIngresos++;
     }
 
+
+
     public void consulta() {
         System.out.println(toString());
     }
-}
 
+
+}
