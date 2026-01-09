@@ -12,7 +12,7 @@ public class Mago extends Personaje {
     public static final int TAM_ARRAY_DE_HECHIZOS = 4;
 
     /** Array que almacena los hechizos aprendidos por el mago */
-    Hechizos[] hechizos = new Hechizos[TAM_ARRAY_DE_HECHIZOS];
+    private Hechizos[] hechizos;
 
     /**
      * Constructor de la clase Mago.
@@ -40,6 +40,8 @@ public class Mago extends Personaje {
 
         // Llamada al constructor de la clase padre
         super(nombre, raza, fuerza, inteligencia, vidaMax);
+
+        hechizos = new Hechizos[TAM_ARRAY_DE_HECHIZOS];
     }
 
     /**
