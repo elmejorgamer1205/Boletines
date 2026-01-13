@@ -5,35 +5,37 @@ import java.util.Arrays;
 
 public class Mago extends Personaje {
 
-    /** Daño que produce un hechizo (valor negativo porque resta vida) */
+    // Daño que realiza un hechizo (valor negativo porque resta vida)
     public static final int DAÑO = -10;
 
-    /** Tamaño máximo del array de hechizos que puede aprender un mago */
+    // Tamaño máximo del array de hechizos que puede aprender un mago
     public static final int TAM_ARRAY_DE_HECHIZOS = 4;
 
-    /** Array que almacena los hechizos aprendidos por el mago */
+    /*
+     * Array que almacena los hechizos aprendidos por el mago.
+     * Cada posición puede contener un hechizo o null.
+     */
     private Hechizos[] hechizos;
 
     /**
-     * Constructor de la clase Mago.
-     * Aplica restricciones específicas para este tipo de personaje.
+     * Constructor de la clase Mago
      *
      * @param nombre Nombre del mago
      * @param raza Raza del mago
-     * @param fuerza Nivel de fuerza
-     * @param inteligencia Nivel de inteligencia
+     * @param fuerza Fuerza del mago (máx. 15)
+     * @param inteligencia Inteligencia del mago (mín. 17)
      * @param vidaMax Vida máxima del mago
-     * @throws PersonajeException Si no cumple las restricciones de un mago
+     * @throws PersonajeException si no cumple los requisitos
      */
     public Mago(String nombre, String raza, int fuerza, int inteligencia, int vidaMax)
             throws PersonajeException {
 
-        // Un mago no puede tener más de 15 de fuerza
+        // Validación de la fuerza máxima permitida
         if (fuerza > 15) {
-            throw new PersonajeException("Un mago no puede tener más de 15 de fuerza");
+            throw new PersonajeException("Un mago no puede tener mas de 15 de fuerza");
         }
 
-        // Un mago no puede tener menos de 17 de inteligencia
+        // Validación de la inteligencia mínima requerida
         if (inteligencia < 17) {
             throw new PersonajeException("Un mago no puede tener menos de 17 de inteligencia");
         }
@@ -41,35 +43,36 @@ public class Mago extends Personaje {
         // Llamada al constructor de la clase padre
         super(nombre, raza, fuerza, inteligencia, vidaMax);
 
+        // Inicialización del array de hechizos
         hechizos = new Hechizos[TAM_ARRAY_DE_HECHIZOS];
     }
 
     /**
      * Permite al mago aprender un nuevo hechizo.
      *
-     * @param hechizo Nombre del hechizo a aprender
-     * @throws PersonajeException Si el mago ya conoce el máximo de hechizos
+     * @param hechizo Nombre del hechizo
+     * @throws PersonajeException si ya no puede aprender más hechizos
      */
     public void aprenderHechizo(String hechizo) throws PersonajeException {
 
-        // Creamos un nuevo objeto Hechizos
+        // Se crea el nuevo hechizo
         Hechizos h = new Hechizos(hechizo);
 
         int contador = 0;
 
-        // Contamos cuántos hechizos tiene actualmente el mago
+        // Contamos cuántos hechizos ya están aprendidos
         for (int i = 0; i < TAM_ARRAY_DE_HECHIZOS; i++) {
             if (hechizos[i] != null) {
                 contador++;
             }
         }
 
-        // Si ya conoce el máximo de hechizos, lanzamos excepción
+        // Si el mago ya tiene el máximo de hechizos, lanza excepción
         if (contador == TAM_ARRAY_DE_HECHIZOS) {
-            throw new PersonajeException("Este mago no puede aprender más hechizos");
+            throw new PersonajeException("Este mago no puede aprender mas hechizos");
         }
 
-        // Guardamos el hechizo en la primera posición libre
+        // Se guarda el hechizo en la primera posición libre
         for (int i = 0; i < TAM_ARRAY_DE_HECHIZOS; i++) {
             if (hechizos[i] == null) {
                 hechizos[i] = h;
@@ -79,48 +82,57 @@ public class Mago extends Personaje {
     }
 
     /**
-     * Permite al mago lanzar un hechizo contra otro personaje.
+     * Lanza un hechizo contra otro personaje.
      *
-     * @param p Personaje que recibe el daño
-     * @param s Nombre del hechizo a lanzar
-     * @throws PersonajeException Si el hechizo no existe o no lo conoce
+     * @param p Personaje objetivo
+     * @param s Nombre del hechizo
+     * @throws PersonajeException si el hechizo no existe o no se conoce
      */
     public void lanzarHechizos(Personaje p, String s) throws PersonajeException {
 
-        // Buscamos el hechizo en el array
+        // Recorremos el array de hechizos
         for (int i = 0; i < hechizos.length; i++) {
-
-            // Comprobamos que la posición no esté vacía
             if (hechizos[i] != null) {
 
                 // Comprobamos si el nombre del hechizo coincide
                 if (hechizos[i].getNombre().equalsIgnoreCase(s)) {
-
-                    // Eliminamos el hechizo tras usarlo
-                    hechizos[i] = null;
-
-                    // Aplicamos el daño al personaje objetivo
-                    p.modificarVidaActual(DAÑO);
+                    hechizos[i] = null; // El hechizo se consume
+                    p.modificarVidaActual(DAÑO); // Se aplica el daño
                     return;
                 }
             }
         }
 
-        // Si no se encuentra el hechizo, lanzamos excepción
+        // Si no se encuentra el hechizo, se lanza excepción
         throw new PersonajeException("Ese hechizo no es válido o el mago no lo conoce");
     }
 
     /**
-     * Devuelve una representación en texto del mago,
-     * incluyendo sus hechizos aprendidos.
+     * Muestra por pantalla los hechizos que conoce el mago.
+     */
+    public void mostrarHechizos() {
+
+        // Recorremos el array y mostramos los hechizos no nulos
+        for (int i = 0; i < hechizos.length; i++) {
+            if (hechizos[i] != null) {
+                System.out.println("· " + hechizos[i].getNombre());
+            }
+        }
+    }
+
+    /**
+     * Devuelve una representación en texto del mago.
      *
-     * @return Información del mago en formato String
+     * @return String con la información del mago
      */
     @Override
     public String toString() {
+
+        // TODO: Mejorar el formato de salida del array de hechizos
         return super.toString() + " Mago{" +
                 "hechizos=" + Arrays.toString(hechizos) +
                 '}';
     }
 }
+
 

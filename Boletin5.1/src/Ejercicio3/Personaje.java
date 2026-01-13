@@ -4,121 +4,185 @@ import Exceptions.PersonajeException;
 
 public class Personaje {
 
-    /** Nombre del personaje */
+    // Nombre del personaje
     private String nombre;
 
-    /** Raza del personaje (definida en un enum Raza) */
+    // Raza del personaje (enum Raza)
     private Raza raza;
 
-    /** Nivel de fuerza del personaje (0-20) */
+    // Fuerza del personaje (0-20)
     private int fuerza;
 
-    /** Nivel de inteligencia del personaje (0-20) */
+    // Inteligencia del personaje (0-20)
     private int inteligencia;
 
-    /** Vida máxima del personaje (no puede modificarse) */
+    // Vida máxima del personaje (constante)
     private final int VIDA_MAX;
 
-    /** Vida actual del personaje */
+    // Vida actual del personaje
     private int vidaActual;
 
     /**
      * Constructor de la clase Personaje.
      *
      * @param nombre Nombre del personaje
-     * @param raza Raza del personaje en formato String
-     * @param fuerza Nivel de fuerza (0-20)
-     * @param inteligencia Nivel de inteligencia (0-20)
-     * @param vidaMax Vida máxima del personaje (0-100)
-     * @throws PersonajeException Si algún valor no es válido
+     * @param raza Raza del personaje (String)
+     * @param fuerza Fuerza del personaje
+     * @param inteligencia Inteligencia del personaje
+     * @param vidaMax Vida máxima del personaje
+     * @throws PersonajeException si algún valor no es válido
      */
-    public Personaje(String nombre, String raza, int fuerza, int inteligencia, int vidaMax)
-            throws PersonajeException {
+    public Personaje(String nombre, String raza, int fuerza,
+                     int inteligencia, int vidaMax) throws PersonajeException {
 
-        // Asignamos el nombre
+        // Asignación del nombre
         this.nombre = nombre;
 
-        // Asignamos la raza usando el metodo privado
+        // Conversión de la raza desde String a enum
         setRaza(raza);
 
-        // Validamos y asignamos fuerza e inteligencia
+        // Validación y asignación de fuerza e inteligencia
         setFuerza(fuerza);
         setInteligencia(inteligencia);
 
-        // Comprobamos que la vida máxima esté dentro del rango permitido
+        /*
+         * Validación de la vida máxima
+         * Debe estar entre 0 y 100
+         */
         if (vidaMax < 0 || vidaMax > 100) {
             throw new PersonajeException("La vida máxima introducida no es válida.");
         }
 
-        // Inicializamos la vida máxima
+        // Inicialización de la vida
         this.VIDA_MAX = vidaMax;
-
-        // Al crear el personaje, su vida actual es la máxima
         this.vidaActual = VIDA_MAX;
     }
 
     /**
-     * Asigna la raza al personaje.
-     * Convierte el String a mayúsculas para que coincida con el enum Raza.
+     * Establece la raza del personaje a partir de un String.
      *
-     * @param raza Raza del personaje
+     * @param raza raza introducida por el usuario
      */
     private void setRaza(String raza) {
+
+        // Convierte el String a enum Raza
         this.raza = Raza.valueOf(raza.toUpperCase());
     }
 
     /**
-     * Asigna la fuerza al personaje tras validarla.
+     * Establece la fuerza del personaje.
      *
-     * @param fuerza Nivel de fuerza
-     * @throws PersonajeException Si la fuerza no está en el rango permitido
+     * @param fuerza valor de fuerza
+     * @throws PersonajeException si la fuerza no es válida
      */
     private void setFuerza(int fuerza) throws PersonajeException {
+
+        // Validación del rango de fuerza
         if (fuerza < 0 || fuerza > 20) {
             throw new PersonajeException("La fuerza introducida no es válida");
         }
+
         this.fuerza = fuerza;
     }
 
     /**
-     * Asigna la inteligencia al personaje tras validarla.
+     * Establece la inteligencia del personaje.
      *
-     * @param inteligencia Nivel de inteligencia
-     * @throws PersonajeException Si la inteligencia no está en el rango permitido
+     * @param inteligencia valor de inteligencia
+     * @throws PersonajeException si la inteligencia no es válida
      */
     private void setInteligencia(int inteligencia) throws PersonajeException {
+
+        // Validación del rango de inteligencia
         if (inteligencia < 0 || inteligencia > 20) {
             throw new PersonajeException("La inteligencia introducida no es válida");
         }
+
         this.inteligencia = inteligencia;
     }
 
     /**
      * Modifica la vida actual del personaje.
-     * Puede usarse para curar (valor positivo) o dañar (valor negativo).
      *
-     * @param modificacion Cantidad de vida a modificar
-     * @throws PersonajeException Si se supera la vida máxima
+     * @param modificacion cantidad a sumar o restar
+     * @throws PersonajeException si se intenta curar con la vida al máximo
      */
     public void modificarVidaActual(int modificacion) throws PersonajeException {
 
-        // Comprobamos que no se supere la vida máxima
+        // Evita que la vida supere la vida máxima
         if (vidaActual + modificacion > VIDA_MAX) {
-            throw new PersonajeException(
-                    "Este personaje no puede ser curado, su vida está al máximo"
-            );
+            vidaActual = VIDA_MAX;
         }
-        // Aplicamos la modificación
+
+        // Si la vida ya está al máximo, no se puede curar
+        if (vidaActual == VIDA_MAX) {
+            throw new PersonajeException(
+                    "Este personaje no puede ser curado, su vida esta al máximo.");
+        }
+
+        // Se aplica la modificación
         this.vidaActual += modificacion;
+    }
+
+    /**
+     * Devuelve el nombre del personaje.
+     *
+     * @return nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * Devuelve la vida actual del personaje.
+     *
+     * @return vida actual
+     */
+    public int getVidaActual() {
+        return vidaActual;
+    }
+
+    /**
+     * Compara dos personajes.
+     * Dos personajes son iguales si tienen el mismo nombre y raza.
+     *
+     * @param o objeto a comparar
+     * @return true si son iguales
+     */
+    @Override
+    public boolean equals(Object o) {
+
+        // Comprobación de null y tipo
+        if (o == null || getClass() != o.getClass()) return false;
+
+        // Conversión segura
+        Personaje personaje = (Personaje) o;
+
+        return nombre.equals(personaje.nombre) && raza == personaje.raza;
+    }
+
+    /**
+     * Genera el código hash del personaje.
+     *
+     * @return hashCode
+     */
+    @Override
+    public int hashCode() {
+
+        int result = nombre.hashCode();
+        result = 31 * result + raza.hashCode();
+        return result;
     }
 
     /**
      * Devuelve una representación en texto del personaje.
      *
-     * @return Información del personaje en formato String
+     * @return String con los datos del personaje
      */
     @Override
     public String toString() {
+
+        // TODO: Mostrar solo información relevante para el jugador
         return "Personaje{" +
                 "nombre='" + nombre + '\'' +
                 ", raza=" + raza +
@@ -129,3 +193,4 @@ public class Personaje {
                 '}';
     }
 }
+
