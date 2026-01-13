@@ -288,8 +288,7 @@ public class Juego {
     public static void ordenarPorVida(Personaje[] jugadores) {
 
         // TODO: Evitar ordenar posiciones null
-        Arrays.sort(jugadores,
-                Comparator.comparingInt(Personaje::getVidaActual).reversed());
+        Arrays.sort(jugadores, Comparator.comparingInt(Personaje::getVidaActual).reversed());
     }
 }
 

@@ -115,9 +115,8 @@ public class Personaje {
         }
 
         // Si la vida ya está al máximo, no se puede curar
-        if (vidaActual == VIDA_MAX) {
-            throw new PersonajeException(
-                    "Este personaje no puede ser curado, su vida esta al máximo.");
+        if (vidaActual == VIDA_MAX && modificacion > 0) {
+            throw new PersonajeException("Este personaje no puede ser curado, su vida esta al máximo.");
         }
 
         // Se aplica la modificación
