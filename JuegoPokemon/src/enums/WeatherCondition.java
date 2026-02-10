@@ -1,7 +1,7 @@
 package enums;
 
 /**
- * Enumeración que representa las distintas condiciones climáticas
+ * E numeración que representa las distintas condiciones climáticas
  * que pueden afectar a los Pokémon durante una ronda de combate.
  *
  * Cada condición puede activar bonificaciones, penalizaciones o

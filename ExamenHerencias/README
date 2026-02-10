@@ -1,0 +1,89 @@
+Models:
+
+  - Invitado
+
+          * Nombre (String)
+	  * Hambre (int) = 0 a 100
+	  * Aburrimiento (int) = 0 a 100
+
+	  * Si el hambre y el aburrimiento llegan a 100, el invitado se va
+	  * Reaccionan a un evento ( Evento evento)
+
+  - Familiar
+
+	  * Hambre inc = 30 a 60
+	  * Aburrimiento inc = 0 a 50
+	  * MUSICA_ALTA = +20
+	  * Regalo = +1
+
+  - Colega
+
+	  * Hambre inc = 50 a 70
+	  * Aburrimiento inc = 0 a 50
+	  * MUSICA_ALTA = -30
+	  * Regalo = +1
+
+  - Gorron
+
+	  * Hambre inc = 90
+	  * Aburrimiento inc = 0 a 50
+	  * Regalo = 0
+	  * robarComida (habilidad)
+ 	  * se va si Hambre = 0
+
+  - CORTE_TARTA
+
+	  * Aburrimiento = 0
+	  * Hambre = -20
+	  * Hambre Gorron = -30
+	  * robarComida = Si
+
+  - MUSICA_ALTA
+
+	  * Aburrimineto colegas = -30
+	  * Aburrimeto Familiar = +20
+	  * robarComida = x2
+	  * Hambre = +10
+
+  - MUSICA_BAJA
+
+	  * Aburrimiento colegas y Gorron = +30
+	  * Aburrimiento Familiar = -20
+	  * robarComida = Si
+	  * Hambre = +10
+
+  - CHARLITA_COLOQUIAL
+
+	  * Aburrimiento Gorron = 10
+	  * Aburrimiento Familiar y Colegas = -20
+	  * Hambre = +10
+	  * robarComida = Si
+
+  - BAILE
+
+	  * Aburrimiento Colegas = -30
+	  * Aburrimiento Familiar = -15
+	  * Gorron = -5
+	  * robarComida = Si
+	  * Hambre = +10
+
+  - PIÑATA
+
+	  * Aburrimiento todos = -20
+	  * Hambre Familiar y Colegas = -10
+	  * Hambre Gorron = -20
+
+  - APERTURA_REGALOS
+
+	  * Aburrimiento = -10
+	  * Hambre = +10
+	  * robarComida = No
+	  * Dar Regalos
+
+ Enums:
+
+  ROPA,DINERO,JUGUETES
+
+ Interfaces:
+
+	* Abrible (Para abrir los regalos)
