@@ -1,7 +1,9 @@
+package Boletin6_1;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Ejercicio1 {
+public class Ejemplo1 {
 
     static void main(String[] args){
         Collection<String> nombres = new ArrayList<>();
