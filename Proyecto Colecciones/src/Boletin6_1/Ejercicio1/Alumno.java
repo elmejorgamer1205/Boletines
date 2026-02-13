@@ -1,31 +1,48 @@
 package Boletin6_1.Ejercicio1;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 public class Alumno {
 
-    private String nombre, dni;
+    private String nombre;
+    private String adn;
 
-    public Alumno(String dni, String nombre) {
-        this.dni = dni;
+    public Alumno(String nombre, String adn) {
+        this.nombre = nombre;
+        this.adn = adn;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    public String getAdn() {
+        return adn;
+    }
 
+    public void setAdn(String adn) {
+        this.adn = adn;
+    }
 
     @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+    public String toString() {
+        return "Alumno{" +
+                "nombre='" + nombre + '\'' +
+                ", adn='" + adn + '\'' +
+                '}';
+    }
 
-        Alumno alumno = (Alumno) o;
-        return nombre.equals(alumno.nombre) && dni.equals(alumno.dni);
+    @Override
+    public final boolean equals(Object o) {
+        if (!(o instanceof Alumno alumno)) return false;
+
+        return adn.equals(alumno.adn);
     }
 
     @Override
     public int hashCode() {
-        int result = nombre.hashCode();
-        result = 31 * result + dni.hashCode();
-        return result;
+        return adn.hashCode();
     }
 }
