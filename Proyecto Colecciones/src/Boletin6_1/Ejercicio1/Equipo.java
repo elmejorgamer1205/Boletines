@@ -1,6 +1,6 @@
 package Boletin6_1.Ejercicio1;
 
-import exceptions.EquipoException;
+import Boletin6_1.Ejercicio1.exceptions.EquipoException;
 
 import java.util.*;
 
