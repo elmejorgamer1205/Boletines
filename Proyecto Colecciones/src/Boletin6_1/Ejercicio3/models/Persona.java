@@ -44,7 +44,9 @@ public abstract class Persona {
         if(this.tipoEnsenanza == TipoEnsenanza.ALUMNO && this.edad < 18 && destinatario.getTipoEnsenanza() != TipoEnsenanza.PROFESOR){
           throw new PersonaException("Error: Los alumnos menores solo pueden mandar mensajes a profesores");
         }
-        Mensaje m = new Mensaje(this, texto);
+        /**Mensaje m = new Mensaje(this, texto);
         destinatario.recibirMensaje(m);
+         **/
     }
+
 }
