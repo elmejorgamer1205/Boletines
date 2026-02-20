@@ -1,4 +1,4 @@
-package Boletin6_1;
+package Boletin6_1.Ejemplos;
 
 import java.util.ArrayList;
 import java.util.Collection;

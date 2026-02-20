@@ -1,4 +1,4 @@
-package Boletin6_1.Ejercicio3.main;
+/**package Boletin6_1.Ejercicio3.main;
 
 import Boletin6_1.Ejercicio3.models.Alumno;
 import Boletin6_1.Ejercicio3.models.Profesor;
@@ -61,3 +61,4 @@ public class Principal {
     }
 }
 
+**/
