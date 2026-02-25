@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Clase principal que contiene el metodo main y maneja la interfaz de usuario por consola.
  */
 public class Main {
-    // Variables estáticas porque se usan dentro del método estático main
+    // Variables estáticas porque se usan dentro del metodo estático main
     private static Scanner scanner = new Scanner(System.in);
     private static Almacen almacen = new Almacen(); // Instanciamos nuestro almacén
 
