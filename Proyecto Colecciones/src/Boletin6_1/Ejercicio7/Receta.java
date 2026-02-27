@@ -2,15 +2,35 @@ package Boletin6_1.Ejercicio7;
 
 import exceptions.RecetaException;
 
-import java.util.HashSet;
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Set;
 
-public class Receta {
+public class Receta implements Comparable<Receta>{
 
-    HashSet<Ingrediente> ingredientes;
+    private Duration tiempoDeElaboracion;
+    private String nombre;
+    Set<Ingrediente> ingredientes;
     LinkedList<String> pasos;
     Iterator<String> iterador = pasos.iterator();
+
+    public Receta(String nombre, Duration tiempoDeElaboracion) {
+        this.nombre = nombre;
+        this.tiempoDeElaboracion = tiempoDeElaboracion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Set<Ingrediente> getIngredientes() {
+        return ingredientes;
+    }
+
+    public Duration getTiempoDeElaboracion() {
+        return tiempoDeElaboracion;
+    }
 
     /**
      * Metodo que recorre la lista de ingredientes en busca del ingrediente que buscas
@@ -27,6 +47,10 @@ public class Receta {
         }
         //si no lo está false
         return false;
+    }
+
+    public void annadirPaso(String paso) {
+        pasos.add(paso);
     }
 
     /**
@@ -94,6 +118,20 @@ public class Receta {
 
         // Insertamos el nuevo paso en su posición
         pasos.add(posicionInsercion, pasoNuevo);
+    }
+
+    public Ingrediente devolverIngrediente(String nombre) throws RecetaException {
+        for (Ingrediente ing : ingredientes) {
+            if (ing.getNombre().equalsIgnoreCase(nombre)) {
+                return ing;
+            }
+        }
+        throw new RecetaException("Ese ingrediente no esta en la receta. \n");
+    }
+
+    @Override
+    public int compareTo(Receta o) {
+        return this.getTiempoDeElaboracion().compareTo(o.getTiempoDeElaboracion());
     }
 
 }
