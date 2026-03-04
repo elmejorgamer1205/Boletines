@@ -1,6 +1,6 @@
 package io;
 
-import exceptions.MiEntrdadaSalidaException;
+import Exceptions.MiEntrdadaSalidaException;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;

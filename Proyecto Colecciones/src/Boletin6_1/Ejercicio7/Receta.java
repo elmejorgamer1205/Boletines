@@ -1,6 +1,6 @@
 package Boletin6_1.Ejercicio7;
 
-import exceptions.RecetaException;
+import Exceptions.RecetaException;
 
 import java.time.Duration;
 import java.util.Iterator;

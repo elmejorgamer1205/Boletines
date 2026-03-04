@@ -1,4 +1,4 @@
-package exceptions;
+package Exceptions;
 
 public class MiEntrdadaSalidaException extends Exception {
     public MiEntrdadaSalidaException(String message) {
