@@ -59,7 +59,7 @@ public class Agencia {
             }
 
             // --- PRUEBA 5: Obtener TODAS las paradas de un cliente (sin duplicados y ordenadas) ---
-            // Para esto, necesitarás un método en Cliente que junte todos los TreeSet de sus rutas en uno solo
+            // Para esto, necesitarás un metodo en Cliente que junte todos los TreeSet de sus rutas en uno solo
             System.out.println("\n--- Todas las paradas únicas que visitará Ana ---");
             TreeSet<String> todasLasParadasAna = cliente1.obtenerTodasLasParadas();
             System.out.println(todasLasParadasAna);

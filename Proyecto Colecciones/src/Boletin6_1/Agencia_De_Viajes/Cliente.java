@@ -43,7 +43,7 @@ public class Cliente {
         rutaEncontrada.annadirParada(nuevaParada);
     }
 
-    public boolean obtenerInfoRutas() {
+    public String obtenerInfoRutas() {
         // Si el cliente no tiene rutas, devolvemos un aviso
         if (rutas.isEmpty()) {
             return "El cliente no tiene rutas asignadas.";
@@ -70,5 +70,15 @@ public class Cliente {
     }
 
     public TreeSet<String> obtenerTodasLasParadas() {
+        // Creamos nuestro Set principal que se ordenará automáticamente
+        TreeSet<String> todasLasParadas = new TreeSet<>();
+
+        // Recorremos las rutas del cliente
+        for (Ruta rutaActual : rutas.values()) {
+            // addAll() vuelca de golpe todos los elementos de un Set a otro
+            todasLasParadas.addAll(rutaActual.getParadas());
+        }
+
+        return todasLasParadas;
     }
 }

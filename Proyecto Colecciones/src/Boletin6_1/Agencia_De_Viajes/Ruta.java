@@ -26,6 +26,10 @@ public class Ruta{
         return nombre;
     }
 
+    public TreeSet<String> getParadas() {
+        return this.paradas;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -50,6 +54,4 @@ public class Ruta{
                 ", destino final='" + destinoFinal + '\'' +
                 '}';
     }
-
-
 }
