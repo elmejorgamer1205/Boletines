@@ -4,21 +4,21 @@ import java.util.HashSet;
 
 public class Jugador extends Cromo {
 
-    private int equipo;
-    private String altura;
+    private String equipo;
+    private int altura;
 
-    public Jugador(int id, String nombre, String altura, int equipo) {
+    public Jugador(int id, String nombre, String equipo, int altura) {
         super(id, nombre);
-        this.altura = altura;
         this.equipo = equipo;
+        this.altura = altura;
     }
 
-    public String getAltura() {
-        return altura;
-    }
-
-    public int getEquipo() {
+    public String getEquipo() {
         return equipo;
+    }
+
+    public int getAltura() {
+        return altura;
     }
 
     @Override

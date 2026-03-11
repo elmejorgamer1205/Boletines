@@ -4,21 +4,21 @@ import java.util.HashSet;
 
 public class Escudo extends Cromo{
 
-    private int numJugadores;
-    private int annoDeFundacion;
+    private final int numeroJugadores;
+    private final int annoDeFundacion;
 
     public Escudo(int id, String nombre, int annoDeFundacion, int numJugadores) {
         super(id, nombre);
         this.annoDeFundacion = annoDeFundacion;
-        this.numJugadores = numJugadores;
+        this.numeroJugadores = numJugadores;
     }
 
     public int getAnnoDeFundacion() {
         return annoDeFundacion;
     }
 
-    public int getNumJugadores() {
-        return numJugadores;
+    public int getNumeroJugadores() {
+        return numeroJugadores;
     }
 
     @Override

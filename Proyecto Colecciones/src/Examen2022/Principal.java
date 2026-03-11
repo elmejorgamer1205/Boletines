@@ -134,7 +134,7 @@ public class Principal {
     }
 
     private static String menu() {
-        return "\n(1) A�adir nuevo cromo"
+        return "\n(1) Añadir nuevo cromo"
                 + "\n(2) Intercambiar dos cromos"
                 + "\n(3) Mezclar con otro mazo"
                 + "\n(4) Contar cromos diferentes"
