@@ -1,4 +1,4 @@
-package Boletín7_1.Ejercicio1;
+package Boletin7_1.Ejercicio1;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -6,7 +6,7 @@ import java.nio.file.Path;
 
 public class Ejercicio1 {
     static void main(String[] args) throws FileNotFoundException {
-        File f = new File("Boletín7_1/Ejercicio1/leeme.txt");
+        File f = new File("Boletin7_1/Ejercicio1/leeme.txt");
 
         try (FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr)){
