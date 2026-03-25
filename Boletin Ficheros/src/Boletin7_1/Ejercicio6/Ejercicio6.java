@@ -9,7 +9,7 @@ import java.nio.file.Path;
 public class Ejercicio6 {
     static void main(String[] args) {
 
-        String nombreDirectorio = MiEntradaSalida.leerLinea("Introduce el nombre del directorio /n");
+        String nombreDirectorio = MiEntradaSalida.leerLinea("Introduce el nombre del directorio \n");
 
         Path p = Path.of(nombreDirectorio);
 
