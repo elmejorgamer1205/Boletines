@@ -1,4 +1,4 @@
-package Boletin7_1.Ejemplos_T7_Ficheros;
+package Boletin7_1.ReadMP3Tags;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
