@@ -10,8 +10,8 @@ public class InvertirImagen {
 
     static void main(String[] args) {
 
-        Path rutaImagen = Path.of("src/pradera.bmp");
-        Path rutaDestino = Path.of("src/destino.bmp");
+        Path rutaImagen = Path.of("src/Boletin7_1/Invertir_Imagen/pradera.bmp");
+        Path rutaDestino = Path.of("src/Boletin7_1/Invertir_Imagen/destino.bmp");
 
 
         try(FileChannel canal = FileChannel.open(rutaImagen, StandardOpenOption.READ);
