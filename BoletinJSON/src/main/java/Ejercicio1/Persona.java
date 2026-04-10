@@ -35,7 +35,7 @@ public class Persona {
 
         String json = gson.toJson(clientes);
 
-        Path path = Path.of("src/main/java/ejercicio1/salidas.json");
+        Path path = Path.of("src/main/java/Ejercicio1/salidas.json");
 
         try {
             Files.writeString(path,json,StandardOpenOption.CREATE);
