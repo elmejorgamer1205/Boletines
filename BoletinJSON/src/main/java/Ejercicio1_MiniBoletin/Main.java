@@ -7,21 +7,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 
 public class Main {
     static void main(String[] args) {
 
         Videojuego videojuego = new Videojuego(1993, "id Software", "DOOM" );
 
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         Path path = Path.of("src/main/java/Ejercicio1_MiniBoletin/Videojuego.json");
 
-        try (BufferedReader r = Files.newBufferedReader(path)) {
 
+        try {
             String json = gson.toJson(videojuego);
-            Files.writeString(path, json);
-            Videojuego videojuego1 = gson.fromJson(r, Videojuego.class);
+            Files.writeString(path, json, StandardOpenOption.CREATE);
+            Videojuego videojuego1 = gson.fromJson(Files.newBufferedReader(path), Videojuego.class);
             System.out.println(videojuego1.toString());
 
         } catch (IOException e) {
