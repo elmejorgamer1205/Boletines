@@ -1,0 +1,9 @@
+{
+  "username": "Carlos",
+  "email": "csimseq1205@g.educaand.es",
+  "direccion": {
+    "calle": "Calle España",
+    "ciudad": "Isla Cristina",
+    "codigoPostal": "21410"
+  }
+}

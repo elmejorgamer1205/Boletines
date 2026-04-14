@@ -1,0 +1,17 @@
+[
+  {
+    "nombre": "Álvaro",
+    "curso": "1º DAM",
+    "notaMedia": 9.8
+  },
+  {
+    "nombre": "Javier",
+    "curso": "1º DAM",
+    "notaMedia": 7.3
+  },
+  {
+    "nombre": "Carlos",
+    "curso": "1º DAM",
+    "notaMedia": 6.6
+  }
+]
