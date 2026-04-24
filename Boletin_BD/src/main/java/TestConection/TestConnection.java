@@ -1,12 +1,10 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
+package TestConection;
+
+import io.PropertiesReader;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class TestConnection {
     public static void main(String[] args) throws Exception {
