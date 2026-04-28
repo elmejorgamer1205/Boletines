@@ -1,4 +1,4 @@
-package TestConection;
+package Ejercicio1;
 
 import io.PropertiesReader;
 
