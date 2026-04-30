@@ -1,4 +1,4 @@
-package ejercicio7;
+package Boletin7_1.Ejercicio7;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,21 +8,26 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class Ejercicio7 {
+    // Declaración del Scanner a nivel de clase para poder reutilizarlo en todos los métodos.
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         int opcion;
+        // Bucle do-while para mantener el menú activo hasta que se elija salir (opción 6).
         do {
             mostrarMenu();
             System.out.print("Selecciona una opción: ");
             opcion = scanner.nextInt();
+            // Muy importante: Consumir el salto de línea residual después de leer un número (nextInt).
+            // Esto evita que el próximo scanner.nextLine() se salte la lectura.
             scanner.nextLine();
 
+            // Switch tradicional para manejar las opciones del menú.
             switch (opcion) {
                 case 1:
-                    opcion1();
                     System.out.println("Opción 1: Listar directorio");
+                    opcion1();
                     break;
                 case 2:
                     System.out.println("Opción 2: Listar con prefijo");
@@ -38,12 +43,11 @@ public class Ejercicio7 {
                     break;
                 case 5:
                     System.out.println("Opción 5: Buscar recursivo");
-                    //La vamos a utilizar con Files.walk
+                    // La vamos a utilizar con Files.walk
                     opcion5();
                     break;
                 case 6:
                     System.out.println("¡Saliendo del programa!");
-
                     break;
                 default:
                     System.out.println("Opción inválida");
@@ -64,20 +68,26 @@ public class Ejercicio7 {
     }
 
     public static void opcion1() {
-
+        // ⚠️ NOTA: Este método está vacío.
+        // Aquí deberías implementar un simple Files.list(p).forEach(...) similar a los otros métodos,
+        // pero sin usar el .filter().
     }
 
     public static void opcion2() {
-
         System.out.println("Introduce el directorio: \n");
         Path p = Path.of(scanner.nextLine());
 
         System.out.println("Introduce por cual palabra quieres buscar");
         String palabraABuscar = scanner.nextLine();
+
         if (Files.isDirectory(p)) {
+            // try-with-resources perfecto para cerrar el Stream.
             try (Stream<Path> ficheros = Files.list(p)) {
+
+                // .filter(): Se queda solo con los archivos cuyo nombre (toString) empiece (startsWith) por la palabra.
                 ficheros.filter(path -> path.getFileName().toString().startsWith(palabraABuscar))
                         .forEach(path -> {
+                            // Comprueba si el elemento filtrado es directorio o archivo para formatear la salida.
                             if (Files.isDirectory(path)) {
                                 System.out.printf("%s - directorio %n", path.getFileName());
                             } else {
@@ -91,7 +101,6 @@ public class Ejercicio7 {
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
-
         }
     }
 
@@ -101,9 +110,11 @@ public class Ejercicio7 {
 
         System.out.println("Introduce por cual extension quieres buscar (sin el punto)");
         String extensionABuscar = scanner.nextLine();
-        if (Files.isDirectory(p)) {
 
+        if (Files.isDirectory(p)) {
             try (Stream<Path> ficheros = Files.list(p)) {
+
+                // .filter(): Se queda solo con los archivos cuyo nombre termine en (endsWith) un "." + la extensión.
                 ficheros.filter(path -> path.getFileName().toString().endsWith("." + extensionABuscar))
                         .forEach(path -> {
                             if (Files.isDirectory(path)) {
@@ -119,7 +130,6 @@ public class Ejercicio7 {
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
-
         }
     }
 
@@ -131,7 +141,9 @@ public class Ejercicio7 {
         String ficheroABuscar = scanner.nextLine();
 
         if (Files.isDirectory(p)) {
-
+            // Files.find(): Es más avanzado que list().
+            // Parámetro '1': Es la profundidad máxima (maxDepth). Como es 1, solo busca en esta carpeta, no entra en subcarpetas.
+            // BiPredicate (path, atr): Expresión lambda que evalúa si el nombre del archivo coincide exactamente (equals).
             try (Stream<Path> ficheros = Files.find(p, 1, ((path, atr) -> {
                 return path.getFileName().toString().equals(ficheroABuscar);
             }))) {
@@ -149,10 +161,8 @@ public class Ejercicio7 {
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
-
         }
     }
-
 
     public static void opcion5() {
         System.out.println("Introduce el directorio \n");
@@ -162,7 +172,11 @@ public class Ejercicio7 {
         String archivoABuscar = scanner.nextLine();
 
         if (Files.isDirectory(p)) {
+            // Files.walk(): A diferencia de list(), walk() es recursivo por defecto.
+            // Entrará en todas las subcarpetas dentro del directorio indicado construyendo un árbol completo.
             try (Stream<Path> ficheros = Files.walk(p)) {
+
+                // .filter(): Se queda con cualquier archivo/carpeta que contenga (contains) la palabra en cualquier parte de su nombre.
                 ficheros.filter(path -> path.getFileName().toString().contains(archivoABuscar))
                         .forEach(path -> {
                             if (Files.isDirectory(path)) {
