@@ -3,19 +3,26 @@ package Ejercicio3_MiniBoletin;
 import com.google.gson.annotations.Expose;
 
 public class Direccion {
+
+    // La anotación @Expose le dice a Gson: "Por favor, incluye esta variable
+    // cuando conviertas el objeto a JSON o cuando lo leas desde un JSON".
     @Expose
     private String calle;
+
     @Expose
     private String ciudad;
+
     @Expose
     private String codigoPostal;
 
+    // Constructor habitual
     public Direccion(String calle, String ciudad, String codigoPostal) {
         this.calle = calle;
         this.ciudad = ciudad;
         this.codigoPostal = codigoPostal;
     }
 
+    // Getters y Setters
     public String getCalle() {
         return calle;
     }
