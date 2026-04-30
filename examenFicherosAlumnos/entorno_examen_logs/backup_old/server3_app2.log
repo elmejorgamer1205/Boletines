@@ -1,0 +1,25 @@
+[21-11-2024|08:00:21] <ERROR> Error 500 al llamar a la API externa.
+[21-11-2024|08:01:51] <INFO> Limpiando cache temporal.
+[21-11-2024|08:02:19] <DEBUG> Usuario logueado correctamente.
+[21-11-2024|08:04:11] <INFO> Usuario logueado correctamente.
+[21-11-2024|08:05:12] <ERROR> NullPointerException en el servicio.
+[21-11-2024|08:05:33] <DEBUG> Usuario logueado correctamente.
+[21-11-2024|08:06:14] <INFO> Usuario logueado correctamente.
+[21-11-2024|08:07:47] <ERROR> Disco lleno al intentar escribir.
+[21-11-2024|08:08:23] <DEBUG> Usuario logueado correctamente.
+[21-11-2024|08:09:34] <INFO> Iniciando servicio...
+[21-11-2024|08:11:22] <INFO> Iniciando servicio...
+[21-11-2024|08:12:52] <ERROR> NullPointerException en el servicio.
+[21-11-2024|08:13:41] <INFO> Conexion a BD establecida.
+[21-11-2024|08:14:59] <INFO> Conexion a BD establecida.
+[21-11-2024|08:16:15] <INFO> Conexion a BD establecida.
+[21-11-2024|08:17:48] <INFO> Limpiando cache temporal.
+[21-11-2024|08:19:25] <DEBUG> Limpiando cache temporal.
+[21-11-2024|08:20:15] <INFO> Limpiando cache temporal.
+[21-11-2024|08:21:47] <DEBUG> Iniciando servicio...
+[21-11-2024|08:22:05] <INFO> Conexion a BD establecida.
+[21-11-2024|08:22:48] <INFO> Conexion a BD establecida.
+[21-11-2024|08:23:00] <ERROR> Token JWT expirado o invalido.
+[21-11-2024|08:24:59] <INFO> Usuario logueado correctamente.
+[21-11-2024|08:25:26] <ERROR> NullPointerException en el servicio.
+[21-11-2024|08:26:31] <DEBUG> Limpiando cache temporal.

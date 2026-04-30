@@ -1,0 +1,50 @@
+[27-11-2024|08:00:14] <INFO> Iniciando servicio...
+[27-11-2024|08:01:47] <DEBUG> Usuario logueado correctamente.
+[27-11-2024|08:03:26] <DEBUG> Usuario logueado correctamente.
+[27-11-2024|08:04:14] <INFO> Iniciando servicio...
+[27-11-2024|08:04:15] <INFO> Sincronizacion completada.
+[27-11-2024|08:05:34] <DEBUG> Sincronizacion completada.
+[27-11-2024|08:06:56] <DEBUG> Sincronizacion completada.
+[27-11-2024|08:08:25] <INFO> Conexion a BD establecida.
+[27-11-2024|08:09:14] <INFO> Sincronizacion completada.
+[27-11-2024|08:10:02] <INFO> Sincronizacion completada.
+[27-11-2024|08:11:58] <INFO> Sincronizacion completada.
+[27-11-2024|08:12:27] <DEBUG> Iniciando servicio...
+[27-11-2024|08:13:43] <INFO> Usuario logueado correctamente.
+[27-11-2024|08:14:30] <DEBUG> Sincronizacion completada.
+[27-11-2024|08:15:12] <INFO> Sincronizacion completada.
+[27-11-2024|08:16:27] <DEBUG> Sincronizacion completada.
+[27-11-2024|08:18:12] <INFO> Usuario logueado correctamente.
+[27-11-2024|08:18:30] <INFO> Sincronizacion completada.
+[27-11-2024|08:18:54] <DEBUG> Limpiando cache temporal.
+[27-11-2024|08:19:50] <INFO> Limpiando cache temporal.
+[27-11-2024|08:20:53] <ERROR> Token JWT expirado o invalido.
+[27-11-2024|08:21:34] <INFO> Usuario logueado correctamente.
+[27-11-2024|08:23:20] <INFO> Usuario logueado correctamente.
+[27-11-2024|08:23:53] <INFO> Conexion a BD establecida.
+[27-11-2024|08:25:49] <DEBUG> Usuario logueado correctamente.
+[27-11-2024|08:26:42] <DEBUG> Limpiando cache temporal.
+[27-11-2024|08:28:29] <DEBUG> Usuario logueado correctamente.
+[27-11-2024|08:30:24] <INFO> Usuario logueado correctamente.
+[27-11-2024|08:30:51] <DEBUG> Conexion a BD establecida.
+[27-11-2024|08:32:02] <INFO> Conexion a BD establecida.
+[27-11-2024|08:33:19] <DEBUG> Conexion a BD establecida.
+[27-11-2024|08:34:17] <INFO> Limpiando cache temporal.
+[27-11-2024|08:36:09] <INFO> Sincronizacion completada.
+[27-11-2024|08:36:56] <INFO> Conexion a BD establecida.
+[27-11-2024|08:37:43] <INFO> Sincronizacion completada.
+[27-11-2024|08:39:27] <INFO> Conexion a BD establecida.
+[27-11-2024|08:40:08] <DEBUG> Sincronizacion completada.
+[27-11-2024|08:41:01] <INFO> Conexion a BD establecida.
+[27-11-2024|08:41:12] <DEBUG> Sincronizacion completada.
+[27-11-2024|08:42:36] <ERROR> Token JWT expirado o invalido.
+[27-11-2024|08:43:38] <INFO> Iniciando servicio...
+[27-11-2024|08:44:47] <INFO> Limpiando cache temporal.
+[27-11-2024|08:46:10] <DEBUG> Sincronizacion completada.
+[27-11-2024|08:48:09] <INFO> Iniciando servicio...
+[27-11-2024|08:48:43] <INFO> Usuario logueado correctamente.
+[27-11-2024|08:49:56] <DEBUG> Iniciando servicio...
+[27-11-2024|08:51:14] <INFO> Conexion a BD establecida.
+[27-11-2024|08:51:48] <INFO> Limpiando cache temporal.
+[27-11-2024|08:52:05] <DEBUG> Conexion a BD establecida.
+[27-11-2024|08:53:43] <INFO> Sincronizacion completada.
